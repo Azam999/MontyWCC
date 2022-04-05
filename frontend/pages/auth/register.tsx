@@ -2,15 +2,16 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Button, Container, Form } from 'react-bootstrap';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 export default function RegisterPage() {
-    const [name, setName] = useState(null);
-    const [email, setEmail] = useState(null);
-    const [password, setPassword] = useState(null);
+    const [name, setName] = useState<string | null>(null);
+    const [email, setEmail] = useState<string | null>(null);
+    const [password, setPassword] = useState<string | null>(null);
 
     const router = useRouter();
 
-    async function handleRegister(e) {
+    async function handleRegister(e: React.SyntheticEvent) {
         e.preventDefault();
         const res = await axios
             .post('/api/auth/register', {
@@ -28,9 +29,11 @@ export default function RegisterPage() {
 
     return (
         <Container>
-            <Button className='mt-3 mb-3' variant='primary' href='/'>
-                ❮
-            </Button>
+            <Link href='/'>
+                <Button className='mt-3 mb-3' variant='primary'>
+                    ❮
+                </Button>
+            </Link>
             <h1 className='display-4' style={{ fontWeight: 800 }}>
                 Register
             </h1>
@@ -39,7 +42,9 @@ export default function RegisterPage() {
                     <Form.Label>Name</Form.Label>
                     <Form.Control
                         placeholder='Enter name'
-                        onChange={(e) => setName(e.target.value)}
+                        onChange={(e: React.SyntheticEvent<EventTarget>) =>
+                            setName((e.target as HTMLInputElement).value)
+                        }
                     />
                 </Form.Group>
                 <Form.Group className='mb-3' controlId='formBasicEmail'>
@@ -47,7 +52,9 @@ export default function RegisterPage() {
                     <Form.Control
                         type='email'
                         placeholder='Enter email'
-                        onChange={(e) => setEmail(e.target.value)}
+                        onChange={(e: React.SyntheticEvent<EventTarget>) =>
+                            setEmail((e.target as HTMLInputElement).value)
+                        }
                     />
                 </Form.Group>
                 <Form.Group className='mb-3' controlId='formBasicPassword'>
@@ -55,7 +62,9 @@ export default function RegisterPage() {
                     <Form.Control
                         type='password'
                         placeholder='Password'
-                        onChange={(e) => setPassword(e.target.value)}
+                        onChange={(e: React.SyntheticEvent<EventTarget>) =>
+                            setPassword((e.target as HTMLInputElement).value)
+                        }
                     />
                 </Form.Group>
                 <Button
