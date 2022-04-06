@@ -1,0 +1,10 @@
+.link {
+    color: #000000 !important;
+    font-weight: bold;
+    transition: 0.3s !important;
+}
+
+.link:hover {
+    color: #0073ff !important;
+    transform: scale(1.2);
+}
