@@ -8,7 +8,11 @@ const nextConfig = {
         destination: 'http://localhost:4001/api/:path*',
       }
     ]
-  }
+  },
+  images: {
+    loader: 'akamai',
+    path: '',
+  },
 }
 
 module.exports = nextConfig
