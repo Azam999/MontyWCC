@@ -35,7 +35,7 @@ export default function LoginPage() {
             <h1 className='display-4' style={{ fontWeight: 800 }}>
                 Login
             </h1>
-            <Form>
+            <Form className="mb-5">
                 <Form.Group className='mb-3' controlId='formBasicEmail'>
                     <Form.Label>Email address</Form.Label>
                     <Form.Control
