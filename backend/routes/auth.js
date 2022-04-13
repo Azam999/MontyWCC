@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 
 router.post('/register', async (req, res) => {
-    const { name, email, password } = req.body;
+    const { name, email, password, points } = req.body;
 
     const user = await User.findOne({ email });
 
@@ -19,6 +19,7 @@ router.post('/register', async (req, res) => {
         name,
         email,
         password: hash,
+        points,
     });
 
     newUser.save().then((userInfo) => {
@@ -35,6 +36,7 @@ router.post('/register', async (req, res) => {
                 _id: userInfo._id,
                 name: userInfo.name,
                 email: userInfo.email,
+                points: userInfo.points,
             },
             accessToken,
             message: 'User Created',
