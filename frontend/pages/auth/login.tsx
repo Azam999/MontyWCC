@@ -14,7 +14,7 @@ export default function LoginPage() {
         e.preventDefault();
         const res = await axios
             .post('/api/auth/login', {
-                email: email,
+                email: email?.toLowerCase(),
                 password: password,
             })
             .catch((err) => console.log(err));

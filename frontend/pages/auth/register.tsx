@@ -36,7 +36,7 @@ export default function RegisterPage() {
 
         const data = {
             name: name,
-            email: email,
+            email: email?.toLowerCase(),
             password: password,
             points: 0,
         };
