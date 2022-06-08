@@ -98,7 +98,7 @@ export default function RegisterPage() {
                 <Button
                     variant='primary'
                     type='submit'
-                    onClick={(e) => handleRegister(e)}
+                    onClick={(e: React.SyntheticEvent<Element>) => handleRegister(e)}
                 >
                     Register
                 </Button>
