@@ -26,11 +26,12 @@ const Home: NextPage = () => {
                     Montgomery Computer Science Club
                 </p>
 
-                <div className='mb-5'>
-                    <Link href='/dashboard' passHref>
+                <Link href='/dashboard' passHref>
+                    <div className='mb-5'>
                         <DesignedButton text='Go to Dashboard' />
-                    </Link>
-                </div>
+                    </div>
+                </Link>
+
                 <InformationSection
                     title='Get Rewards!'
                     description='Every week, there will be a coding challenge and whoever gets the most points will get rewards,which include gift cards, merchandise, and discord nitro! The gift cards will be for Amazon and the merchandise will have the Montgomery Computer Science Club logo. To see how to earn points, check out the section below.'
@@ -39,7 +40,7 @@ const Home: NextPage = () => {
                 />
                 <InformationSection
                     title='Earn Points!'
-                    description='Whoever solves the most test cases in the least amount of time gets the most points and these points will be a large factor in determining who will get a board position along with attendance and other factors. Additionally, there will be a Kahoot each week to review the previous meeting&apos;s material and these will also count for points.'
+                    description="Whoever solves the most test cases in the least amount of time gets the most points and these points will be a large factor in determining who will get a board position along with attendance and other factors. Additionally, there will be a Kahoot each week to review the previous meeting's material and these will also count for points."
                     image='https://img.icons8.com/external-flaticons-flat-flat-icons/1000/000000/external-points-black-friday-cyber-monday-flaticons-flat-flat-icons.png'
                     toRight={false}
                 />
